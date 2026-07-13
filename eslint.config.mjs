@@ -12,9 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Test doubles mirror external API signatures; unused params are expected.
-    "test/mocks/**",
   ]),
+  {
+    // Test doubles mirror external API signatures; unused params are expected.
+    files: ["test/mocks/**"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;
