@@ -1,0 +1,5 @@
+.superpowers/
+
+# raw source photography — large/unprocessed, not needed at deploy time
+/images/
+/logo/
