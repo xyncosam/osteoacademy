@@ -22,7 +22,7 @@ export default function AboutPage() {
           title="Practical continuing education, built by practitioners"
         />
         <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-ink-900">
-          Osteo Academy exists to help licensed health professionals build real, applicable clinical skill — through
+          Osteo Academy exists to help licensed health professionals build real, applicable clinical skill through
           hands-on in-person workshops today, and self-paced online courses soon. Every course is designed around a
           simple idea: learn it, understand why it works, apply it with a real patient, and let it transform your
           practice.

@@ -9,7 +9,7 @@ export const COURSES: Course[] = [
     priceCents: 49500,
     description: [
       'Functional Acupressure is a one-day, hands-on workshop designed for licensed health professionals who want to add a precise, evidence-informed acupressure technique to their clinical toolkit.',
-      'Rather than treating acupressure as an isolated modality, this course frames each technique within a functional movement context — connecting point selection to the assessment findings you already use every day.',
+      'Rather than treating acupressure as an isolated modality, this course frames each technique within a functional movement context, connecting point selection to the assessment findings you already use every day.',
       "Through guided practice, case-based discussion, and instructor feedback, you'll leave with a repeatable framework you can apply in your very next patient session.",
     ],
     learningObjectives: [

@@ -27,7 +27,7 @@ export async function submitContactForm(
 
   const toEmail = process.env.CONTACT_TO_EMAIL
   if (!toEmail) {
-    return { status: 'error', errors: {}, message: 'This form is not fully configured yet — please email us directly.' }
+    return { status: 'error', errors: {}, message: 'This form is not fully configured yet. Please email us directly.' }
   }
 
   try {

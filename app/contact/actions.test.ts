@@ -65,7 +65,7 @@ describe('submitContactForm', () => {
       formData({ name: 'Jamie', email: 'jamie@example.com', message: 'Hello!' }),
     )
     expect(result.status).toBe('error')
-    expect(result.message).toBe('This form is not fully configured yet — please email us directly.')
+    expect(result.message).toBe('This form is not fully configured yet. Please email us directly.')
     expect(sendEmail).not.toHaveBeenCalled()
   })
 })

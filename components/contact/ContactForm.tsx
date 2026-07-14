@@ -10,7 +10,7 @@ export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
 
   if (state.status === 'success') {
-    return <p className="font-body text-base text-forest-900">Thanks for reaching out — we&apos;ll get back to you soon.</p>
+    return <p className="font-body text-base text-forest-900">Thanks for reaching out. We&apos;ll get back to you soon.</p>
   }
 
   return (
