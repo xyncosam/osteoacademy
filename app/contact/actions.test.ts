@@ -46,6 +46,18 @@ describe('submitContactForm', () => {
     expect(result.status).toBe('error')
   })
 
+  it('escapes HTML in the submitted message before building the email body', async () => {
+    vi.mocked(sendEmail).mockResolvedValue(undefined)
+    await submitContactForm(
+      initialState,
+      formData({ name: 'Jamie', email: 'jamie@example.com', message: '<img src=x onerror=alert(1)>' }),
+    )
+    expect(sendEmail).toHaveBeenCalledWith(
+      expect.objectContaining({ html: expect.stringContaining('&lt;img src=x onerror=alert(1)&gt;') }),
+    )
+    expect(vi.mocked(sendEmail).mock.calls[0][0].html).not.toContain('<img src=x')
+  })
+
   it('returns a friendly not-configured message without sending when CONTACT_TO_EMAIL is unset', async () => {
     vi.stubEnv('CONTACT_TO_EMAIL', '')
     const result = await submitContactForm(

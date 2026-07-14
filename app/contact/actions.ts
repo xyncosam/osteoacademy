@@ -2,6 +2,7 @@
 
 import { validateContactForm, type ContactFormErrors } from '@/lib/validateContactForm'
 import { sendEmail } from '@/lib/email'
+import { escapeHtml } from '@/lib/escapeHtml'
 
 export type ContactFormState = {
   status: 'idle' | 'success' | 'error'
@@ -33,7 +34,7 @@ export async function submitContactForm(
     await sendEmail({
       to: toEmail,
       subject: `New contact form message from ${input.name}`,
-      html: `<p><strong>From:</strong> ${input.name} (${input.email})</p><p>${input.message}</p>`,
+      html: `<p><strong>From:</strong> ${escapeHtml(input.name)} (${escapeHtml(input.email)})</p><p>${escapeHtml(input.message)}</p>`,
     })
   } catch (error) {
     console.error('Failed to send contact form email:', error)
