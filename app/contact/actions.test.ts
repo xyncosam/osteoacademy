@@ -45,4 +45,15 @@ describe('submitContactForm', () => {
     )
     expect(result.status).toBe('error')
   })
+
+  it('returns a friendly not-configured message without sending when CONTACT_TO_EMAIL is unset', async () => {
+    vi.stubEnv('CONTACT_TO_EMAIL', '')
+    const result = await submitContactForm(
+      initialState,
+      formData({ name: 'Jamie', email: 'jamie@example.com', message: 'Hello!' }),
+    )
+    expect(result.status).toBe('error')
+    expect(result.message).toBe('This form is not fully configured yet — please email us directly.')
+    expect(sendEmail).not.toHaveBeenCalled()
+  })
 })

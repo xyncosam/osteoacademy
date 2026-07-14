@@ -35,7 +35,8 @@ export async function submitContactForm(
       subject: `New contact form message from ${input.name}`,
       html: `<p><strong>From:</strong> ${input.name} (${input.email})</p><p>${input.message}</p>`,
     })
-  } catch {
+  } catch (error) {
+    console.error('Failed to send contact form email:', error)
     return { status: 'error', errors: {}, message: 'Something went wrong sending your message. Please try again shortly.' }
   }
 
