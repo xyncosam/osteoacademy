@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
 const PHOTOS = [
-  { src: '/images/6f1a9503.jpg', alt: 'Instructor demonstrating a cervical technique on a client' },
-  { src: '/images/6f1a9529.jpg', alt: 'Instructor demonstrating a hip-focused technique on a client' },
-  { src: '/images/6f1a9506.jpg', alt: 'Hands-on practice during an Osteo Academy workshop' },
+  { src: '/images/img-2828.jpg', alt: 'Instructor teaching functional anatomy with a foot skeleton model' },
+  { src: '/images/img-4913.jpg', alt: 'Instructor marking an acupressure meridian on a client’s forearm' },
+  { src: '/images/img-2136.jpg', alt: 'Instructor teaching shoulder anatomy with a joint model' },
 ]
 
 export function PhotoStrip() {
