@@ -9,7 +9,7 @@ export type CourseDate = {
 
 export type Instructor = {
   name: string
-  credentials: string
+  credentials?: string
   bio: string
   photo: string
 }

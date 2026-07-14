@@ -15,7 +15,7 @@ describe('CourseDetailPage', () => {
 
     expect(screen.getByRole('heading', { level: 1, name: 'Functional Acupressure' })).toBeInTheDocument()
     expect(screen.getByText('Dates Coming Soon')).toBeInTheDocument()
-    expect(screen.getByText('Dr. Alex Rivera, DO')).toBeInTheDocument()
+    expect(screen.getByText('Alexey Soshalskiy')).toBeInTheDocument()
   })
 
   it('renders no Register/Notify button or link while dates are unpublished', async () => {

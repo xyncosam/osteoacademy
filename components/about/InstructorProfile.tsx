@@ -9,9 +9,11 @@ export function InstructorProfile({ instructor }: { instructor: Instructor }) {
       </div>
       <div>
         <h3 className="font-display text-2xl text-forest-900">{instructor.name}</h3>
-        <p className="mt-1 font-body text-sm font-semibold uppercase tracking-wide text-sage-500">
-          {instructor.credentials}
-        </p>
+        {instructor.credentials && (
+          <p className="mt-1 font-body text-sm font-semibold uppercase tracking-wide text-sage-500">
+            {instructor.credentials}
+          </p>
+        )}
         <p className="mt-4 max-w-xl font-body text-sm leading-relaxed text-ink-900">{instructor.bio}</p>
       </div>
     </div>

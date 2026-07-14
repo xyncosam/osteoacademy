@@ -12,6 +12,6 @@ describe('AboutPage', () => {
 
   it("renders the featured course's instructor name", () => {
     render(<AboutPage />)
-    expect(screen.getByText('Dr. Alex Rivera, DO')).toBeInTheDocument()
+    expect(screen.getByText('Alexey Soshalskiy')).toBeInTheDocument()
   })
 })

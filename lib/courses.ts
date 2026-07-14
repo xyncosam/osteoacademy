@@ -20,9 +20,8 @@ export const COURSES: Course[] = [
       'Recognize contraindications and safety considerations for acupressure practice',
     ],
     instructor: {
-      name: 'Dr. Alex Rivera, DO',
-      credentials: 'Osteopathic Physician',
-      bio: 'Dr. Alex Rivera is a licensed osteopathic physician with over a decade of clinical experience integrating manual therapy and functional movement assessment into patient care. Alex has taught continuing education workshops across the country, focused on making manual technique clinically practical and immediately applicable.',
+      name: 'Alexey Soshalskiy',
+      bio: 'Bio coming soon.',
       photo: '/images/6f1a9503.jpg',
     },
     dates: [],
