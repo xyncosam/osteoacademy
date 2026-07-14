@@ -18,6 +18,14 @@ describe('CourseDetailPage', () => {
     expect(screen.getByText('Dr. Alex Rivera, DO')).toBeInTheDocument()
   })
 
+  it('renders no Register/Notify button or link while dates are unpublished', async () => {
+    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'functional-acupressure' }) })
+    render(Page)
+
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
+    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+  })
+
   it('calls notFound for an unknown slug', async () => {
     await expect(CourseDetailPage({ params: Promise.resolve({ slug: 'does-not-exist' }) })).rejects.toThrow(
       'NEXT_NOT_FOUND',
