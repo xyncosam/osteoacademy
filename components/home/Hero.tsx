@@ -11,7 +11,7 @@ export function Hero() {
         <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium text-forest-900 md:text-5xl">
           Learn. Understand. Apply. Transform.
         </h1>
-        <span className="mt-5 h-1.5 w-16 rounded-full bg-sage-500" aria-hidden="true" />
+        <span className="mt-4 h-1.5 w-16 rounded-full bg-sage-500" aria-hidden="true" />
         <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-ink-900">
           Hands-on workshops and online courses that build real clinical skill, taught by practicing professionals.
         </p>

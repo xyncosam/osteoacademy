@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -9,6 +10,24 @@ import { COURSES, getCourseBySlug } from '@/lib/courses'
 
 export function generateStaticParams() {
   return COURSES.map((course) => ({ slug: course.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const course = getCourseBySlug(slug)
+
+  if (!course) {
+    return { title: 'Course Not Found | Osteo Academy' }
+  }
+
+  return {
+    title: `${course.title} | Osteo Academy`,
+    description: course.tagline,
+  }
 }
 
 export default async function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {

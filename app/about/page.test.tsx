@@ -6,7 +6,7 @@ describe('AboutPage', () => {
   it('renders the mission statement heading', () => {
     render(<AboutPage />)
     expect(
-      screen.getByRole('heading', { level: 2, name: 'Practical continuing education, built by practitioners' }),
+      screen.getByRole('heading', { level: 1, name: 'Practical continuing education, built by practitioners' }),
     ).toBeInTheDocument()
   })
 
