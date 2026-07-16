@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 
 const NAV_LINKS = [
@@ -17,8 +18,9 @@ export function Header() {
   return (
     <header className="border-b border-border bg-cream-50">
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="font-display text-xl font-semibold text-forest-900">
-          Osteo Academy
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo/icon.png" alt="" width={950} height={545} className="h-10 w-auto" priority />
+          <span className="font-display text-xl font-semibold text-forest-900">Osteo Academy</span>
         </Link>
 
         <nav className="hidden gap-8 md:flex">
