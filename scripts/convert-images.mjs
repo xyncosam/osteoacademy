@@ -13,20 +13,34 @@ const SOURCES = [
   { srcDir: 'logo', outDir: 'public/logo' },
 ]
 
-async function convertOne(srcPath, outPath) {
+async function convertOne(srcPath, outDir, fileName) {
   const ext = extname(srcPath).toLowerCase()
   const inputBuffer = await readFile(srcPath)
 
-  const jpegBuffer =
+  const decodedBuffer =
     ext === '.heic'
       ? Buffer.from(await convert({ buffer: inputBuffer, format: 'JPEG', quality: 0.92 }))
       : inputBuffer
 
-  await sharp(jpegBuffer)
-    .rotate()
-    .resize({ width: MAX_WIDTH, withoutEnlargement: true })
-    .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
-    .toFile(outPath)
+  // Logos/graphics can carry transparency; flattening them to JPEG would
+  // silently bake in a solid background. Preserve alpha as PNG instead —
+  // but only when a pixel is actually transparent, not just when an alpha
+  // channel is structurally present (many exports carry one at 100% opacity).
+  const { hasAlpha } = await sharp(decodedBuffer).metadata()
+  const isActuallyTransparent =
+    hasAlpha && (await sharp(decodedBuffer).stats()).channels[3]?.min < 255
+  const baseName = outputFileNameFor(fileName).replace(/\.jpg$/, '')
+  const pipeline = sharp(decodedBuffer).rotate().resize({ width: MAX_WIDTH, withoutEnlargement: true })
+
+  if (isActuallyTransparent) {
+    const outPath = join(outDir, `${baseName}.png`)
+    await pipeline.png().toFile(outPath)
+    return outPath
+  }
+
+  const outPath = join(outDir, `${baseName}.jpg`)
+  await pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toFile(outPath)
+  return outPath
 }
 
 async function processDir({ srcDir, outDir }) {
@@ -47,9 +61,8 @@ async function processDir({ srcDir, outDir }) {
     const info = await stat(srcPath)
     if (!info.isFile()) continue
 
-    const outPath = join(outDir, outputFileNameFor(fileName))
     try {
-      await convertOne(srcPath, outPath)
+      const outPath = await convertOne(srcPath, outDir, fileName)
       converted += 1
       console.log(`converted ${fileName} -> ${outPath}`)
     } catch (error) {
