@@ -19,7 +19,7 @@ export function Header() {
     <header className="border-b border-border bg-cream-50">
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
+          <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full">
             <Image src="/logo/badge-glow.png" alt="" fill className="object-cover" priority />
           </span>
           <span className="font-display text-xl font-semibold text-forest-900">Osteo Academy</span>
