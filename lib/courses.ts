@@ -22,7 +22,7 @@ export const COURSES: Course[] = [
     instructor: {
       name: 'Alexey Soshalskiy',
       bio: 'Bio coming soon.',
-      photo: '/images/img-2066.jpg',
+      photo: '/images/portrait.jpg',
     },
     dates: [],
   },
