@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
+import { SocialLinks } from '@/components/ui/SocialLinks'
 
 export function Hero() {
   return (
@@ -18,6 +19,10 @@ export function Hero() {
         <div className="mt-8">
           <Button href="/courses">Explore Courses</Button>
         </div>
+        <p className="mt-10 font-body text-sm text-ink-900">
+          Follow along on Instagram, Facebook &amp; YouTube for tips, techniques, and behind-the-scenes.
+        </p>
+        <SocialLinks className="mt-3 justify-center" />
       </Container>
     </section>
   )
