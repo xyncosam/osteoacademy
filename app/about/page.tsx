@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { PhotoStrip } from '@/components/ui/PhotoStrip'
 import { InstructorProfile } from '@/components/about/InstructorProfile'
 import { getFeaturedCourse } from '@/lib/courses'
 
@@ -27,6 +28,10 @@ export default function AboutPage() {
           simple idea: learn it, understand why it works, apply it with a real patient, and let it transform your
           practice.
         </p>
+
+        <div className="mt-12">
+          <PhotoStrip />
+        </div>
 
         <div className="mt-16">
           <SectionHeading eyebrow="Meet the Instructor" title="Your instructor" />
