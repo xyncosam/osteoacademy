@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const PHOTOS = [
   { src: '/images/img-4913.jpg', alt: 'Instructor marking an acupressure meridian on a client’s forearm' },
-  { src: '/images/img-2136.jpg', alt: 'Instructor teaching shoulder anatomy with a joint model' },
+  { src: '/images/img-2058.jpg', alt: 'Instructor annotating an anatomy chart during a teaching session' },
   { src: '/images/img-2828.jpg', alt: 'Instructor teaching functional anatomy with a foot skeleton model' },
 ]
 
