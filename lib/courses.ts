@@ -21,8 +21,8 @@ export const COURSES: Course[] = [
     ],
     instructor: {
       name: 'Alexey Soshalskiy',
-      bio: 'Bio coming soon.',
-      photo: '/images/portrait.jpg',
+      bio: 'Alexey Soshalskiy has been practicing manual therapy since 2019, with training and experience in Rapid NeuroFascial Reset (RNFR) and Manual Osteopathy (MOT). Since 2022, he has served as an instructor at a local massage therapy institute, teaching anatomy, pathology, and orthopedic assessment. Through years of clinical practice, teaching, and continued study, Alexey has developed several original treatment concepts by integrating principles from physiotherapy, osteopathy, and Traditional Chinese Medicine. His approach emphasizes practical, evidence-informed techniques that can be readily applied in clinical practice.',
+      photo: '/images/portrait-headshot.jpg',
     },
     dates: [],
   },
