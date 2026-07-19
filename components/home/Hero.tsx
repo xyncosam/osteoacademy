@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { SocialLinks } from '@/components/ui/SocialLinks'
@@ -8,7 +9,10 @@ export function Hero() {
     <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden py-20 text-center">
       <HeroSlideshow />
       <Container className="flex flex-col items-center">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-sage-500">
+        <span className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full">
+          <Image src="/logo/badge-glow.png" alt="" fill className="object-cover" />
+        </span>
+        <p className="mt-6 font-body text-xs font-semibold uppercase tracking-[0.18em] text-sage-500">
           Continuing Education for Health Professionals
         </p>
         <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium text-cream-50 md:text-5xl">
