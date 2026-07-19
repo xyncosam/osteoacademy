@@ -5,7 +5,7 @@ import { HeroSlideshow } from './HeroSlideshow'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 text-center">
+    <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden py-20 text-center">
       <HeroSlideshow />
       <Container className="flex flex-col items-center">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-sage-500">
