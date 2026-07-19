@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden py-20 text-center">
       <HeroSlideshow />
       <Container className="flex flex-col items-center">
-        <span className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full">
+        <span className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full bg-cream-50">
           <Image src="/logo/badge-glow.png" alt="" fill className="object-cover" />
         </span>
         <p className="mt-6 font-body text-xs font-semibold uppercase tracking-[0.18em] text-sage-500">
