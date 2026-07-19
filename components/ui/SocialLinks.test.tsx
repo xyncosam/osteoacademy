@@ -20,4 +20,14 @@ describe('SocialLinks', () => {
     const youtube = screen.getByRole('link', { name: 'YouTube' })
     expect(youtube).toHaveAttribute('href', 'https://youtube.com/@osteoacademy?si=-2RF_HJAtlNBf515')
   })
+
+  it('defaults to the dark (ink) color variant', () => {
+    render(<SocialLinks />)
+    expect(screen.getByRole('link', { name: 'Instagram' })).toHaveClass('text-ink-900')
+  })
+
+  it('applies the light color variant for use on dark backgrounds', () => {
+    render(<SocialLinks variant="light" />)
+    expect(screen.getByRole('link', { name: 'Instagram' })).toHaveClass('text-cream-50')
+  })
 })

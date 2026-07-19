@@ -31,7 +31,18 @@ const SOCIAL_LINKS = [
   },
 ]
 
-export function SocialLinks({ className = '' }: { className?: string }) {
+const VARIANT_CLASSES = {
+  dark: 'text-ink-900 hover:text-sage-500',
+  light: 'text-cream-50 hover:text-sage-500',
+}
+
+export function SocialLinks({
+  className = '',
+  variant = 'dark',
+}: {
+  className?: string
+  variant?: keyof typeof VARIANT_CLASSES
+}) {
   return (
     <div className={`flex gap-4 ${className}`.trim()}>
       {SOCIAL_LINKS.map((social) => (
@@ -41,7 +52,7 @@ export function SocialLinks({ className = '' }: { className?: string }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}
-          className="text-ink-900 hover:text-sage-500"
+          className={VARIANT_CLASSES[variant]}
         >
           <span className="block h-5 w-5">{social.icon}</span>
         </a>

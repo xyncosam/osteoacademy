@@ -12,6 +12,10 @@ describe('getButtonClasses', () => {
     expect(getButtonClasses('outline')).toContain('border-forest-900')
   })
 
+  it('applies inverse variant classes', () => {
+    expect(getButtonClasses('inverse')).toContain('bg-cream-50')
+  })
+
   it('applies sm size classes', () => {
     expect(getButtonClasses('primary', 'sm')).toContain('px-4')
   })

@@ -1,4 +1,4 @@
-export type ButtonVariant = 'primary' | 'outline'
+export type ButtonVariant = 'primary' | 'outline' | 'inverse'
 export type ButtonSize = 'md' | 'sm'
 
 const base =
@@ -7,6 +7,7 @@ const base =
 const variantClasses: Record<ButtonVariant, string> = {
   primary: 'bg-forest-900 text-cream-50 hover:bg-olive-700',
   outline: 'bg-transparent text-forest-900 border border-forest-900 hover:bg-cream-100',
+  inverse: 'bg-cream-50 text-forest-900 hover:bg-cream-100',
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
