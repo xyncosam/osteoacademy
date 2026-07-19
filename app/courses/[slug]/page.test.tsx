@@ -9,17 +9,17 @@ vi.mock('next/navigation', () => ({
 }))
 
 describe('CourseDetailPage', () => {
-  it('renders the Functional Acupressure course content', async () => {
-    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'functional-acupressure' }) })
+  it('renders the Dynamic Acupressure course content', async () => {
+    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
     render(Page)
 
-    expect(screen.getByRole('heading', { level: 1, name: 'Functional Acupressure' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Dynamic Acupressure' })).toBeInTheDocument()
     expect(screen.getByText('Dates Coming Soon')).toBeInTheDocument()
     expect(screen.getByText('Alexey Soshalskiy')).toBeInTheDocument()
   })
 
   it('renders no Register/Notify button or link while dates are unpublished', async () => {
-    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'functional-acupressure' }) })
+    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
     render(Page)
 
     expect(screen.queryByRole('button')).not.toBeInTheDocument()

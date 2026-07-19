@@ -8,11 +8,11 @@ describe('HomePage', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Learn. Understand. Apply. Transform.' })).toBeInTheDocument()
   })
 
-  it('links to the Functional Acupressure course from the featured section', () => {
+  it('links to the Dynamic Acupressure course from the featured section', () => {
     render(<HomePage />)
     expect(screen.getByRole('link', { name: 'View Course Details' })).toHaveAttribute(
       'href',
-      '/courses/functional-acupressure',
+      '/courses/dynamic-acupressure',
     )
   })
 

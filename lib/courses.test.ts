@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { getCourseBySlug, getFeaturedCourse, getPublishedDates } from './courses'
 
 describe('getCourseBySlug', () => {
-  it('finds the Functional Acupressure course', () => {
-    expect(getCourseBySlug('functional-acupressure')?.title).toBe('Functional Acupressure')
+  it('finds the Dynamic Acupressure course', () => {
+    expect(getCourseBySlug('dynamic-acupressure')?.title).toBe('Dynamic Acupressure')
   })
 
   it('returns undefined for an unknown slug', () => {
@@ -12,8 +12,8 @@ describe('getCourseBySlug', () => {
 })
 
 describe('getFeaturedCourse', () => {
-  it('returns the Functional Acupressure course', () => {
-    expect(getFeaturedCourse().slug).toBe('functional-acupressure')
+  it('returns the Dynamic Acupressure course', () => {
+    expect(getFeaturedCourse().slug).toBe('dynamic-acupressure')
   })
 })
 
