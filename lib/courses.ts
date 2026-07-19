@@ -8,9 +8,9 @@ export const COURSES: Course[] = [
     format: 'in-person',
     priceCents: 49500,
     description: [
-      'Dynamic Acupressure is a one-day, hands-on workshop designed for licensed health professionals who want to add a precise, evidence-informed acupressure technique to their clinical toolkit.',
-      'Rather than treating acupressure as an isolated modality, this course frames each technique within a functional movement context, connecting point selection to the assessment findings you already use every day.',
-      "Through guided practice, case-based discussion, and instructor feedback, you'll leave with a repeatable framework you can apply in your very next patient session.",
+      "Dynamic Acupressure combines traditional acupressure point selection with modern anatomy and neurophysiology to treat common musculoskeletal conditions such as tennis elbow, golfer's elbow, plantar fasciitis, frozen shoulder, sciatica, SI joint dysfunction, TMJ dysfunction, neck pain, and low back pain.",
+      'Using sustained pressure combined with movement and positioning, the technique is designed to engage multiple neuromuscular and fascial receptors simultaneously, including muscle spindles, Golgi tendon organs, Ruffini endings, and interstitial mechanoreceptors. This multimodal approach aims to reduce protective muscle guarding, improve tissue mobility, increase local circulation, and, where appropriate, help restore normal joint and soft tissue alignment for improved movement and function.',
+      'Ideal for massage therapists, physiotherapists, chiropractors, manual osteopathic practitioners, athletic therapists, and other healthcare professionals, this hands-on course provides practical, condition-specific treatment protocols that can be immediately integrated into clinical practice.',
     ],
     learningObjectives: [
       'Assess common functional movement restrictions relevant to acupressure technique',
