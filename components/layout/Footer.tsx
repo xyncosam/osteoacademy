@@ -29,7 +29,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="font-bold text-[#14212B] hover:opacity-80"
           >
-            by xynco.io
+            made by <span className="text-[#17A2B8]">x</span>ynco.io
           </a>
         </div>
       </Container>
