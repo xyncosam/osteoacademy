@@ -21,7 +21,17 @@ export function Footer() {
           <Link href="/contact" className="hover:text-sage-500">Contact</Link>
         </nav>
         <SocialLinks />
-        <p className="text-xs text-ink-900/70">&copy; {year} Osteo Academy. All rights reserved.</p>
+        <div className="flex flex-col items-center gap-1 text-xs text-ink-900/70 md:items-end">
+          <p>&copy; {year} Osteo Academy. All rights reserved.</p>
+          <a
+            href="https://xynco.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#14212B] hover:opacity-80"
+          >
+            by xynco.io
+          </a>
+        </div>
       </Container>
     </footer>
   )
