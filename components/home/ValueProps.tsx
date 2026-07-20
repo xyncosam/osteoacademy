@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Card } from '@/components/ui/Card'
 
 const VALUE_PROPS = [
-  { title: 'Taught by practitioners', body: 'Every course is built and taught by professionals who use these techniques in real clinical practice.' },
+  { title: 'Taught by a practitioner', body: 'Every course is built and taught by a working clinician who uses these techniques in real patient care every day.' },
   { title: 'Built for busy schedules', body: "Focused, hands-on workshops and self-paced online courses designed around a working clinician's time." },
   { title: 'Skills you apply immediately', body: 'Every course centers on a repeatable framework you can bring into your very next patient session.' },
 ]
