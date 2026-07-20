@@ -6,7 +6,7 @@ import { COURSES } from '@/lib/courses'
 
 export const metadata: Metadata = {
   title: 'Courses | Osteo Academy',
-  description: 'Hands-on workshops and online courses for health professionals, taught by practicing practitioners.',
+  description: 'Hands-on workshops for health professionals, taught by a practicing professional. Online courses coming soon.',
 }
 
 export default function CoursesPage() {

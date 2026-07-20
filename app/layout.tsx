@@ -21,7 +21,18 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'Osteo Academy | Continuing Education for Health Professionals',
   description:
-    'Hands-on workshops and online courses for health professionals. Learn. Understand. Apply. Transform.',
+    'Hands-on workshops for health professionals, with online courses coming soon. Learn. Understand. Apply. Transform.',
+  openGraph: {
+    title: 'Osteo Academy | Continuing Education for Health Professionals',
+    description: 'Hands-on workshops for health professionals, with online courses coming soon.',
+    type: 'website',
+    siteName: 'Osteo Academy',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Osteo Academy | Continuing Education for Health Professionals',
+    description: 'Hands-on workshops for health professionals, with online courses coming soon.',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

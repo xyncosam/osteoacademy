@@ -12,6 +12,8 @@ export function generateStaticParams() {
   return COURSES.map((course) => ({ slug: course.slug }))
 }
 
+export const dynamicParams = false
+
 export async function generateMetadata({
   params,
 }: {
@@ -26,7 +28,7 @@ export async function generateMetadata({
 
   return {
     title: `${course.title} | Osteo Academy`,
-    description: course.tagline,
+    description: `${course.title}: a hands-on workshop for health professionals. ${course.tagline}.`,
   }
 }
 

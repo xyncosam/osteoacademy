@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | Osteo Academy',
+  description: "The page you're looking for doesn't exist.",
+}
 
 export default function NotFound() {
   return (
