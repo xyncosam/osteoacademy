@@ -12,7 +12,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 const sizeClasses: Record<ButtonSize, string> = {
   md: 'px-5 py-3 text-sm',
-  sm: 'px-4 py-2 text-xs',
+  sm: 'px-4 py-2.5 text-xs',
 }
 
 export function getButtonClasses(variant: ButtonVariant = 'primary', size: ButtonSize = 'md'): string {

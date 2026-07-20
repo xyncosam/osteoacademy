@@ -17,19 +17,19 @@ export function ContactForm() {
     <form action={formAction} className="flex flex-col gap-5">
       <div>
         <label htmlFor="name" className="font-body text-sm font-medium text-ink-900">Name</label>
-        <input id="name" name="name" type="text" className="mt-1 w-full rounded-md border border-border bg-surface px-4 py-2 font-body text-sm" />
+        <input id="name" name="name" type="text" className="mt-1 w-full rounded-md border border-border bg-surface px-4 py-3 font-body text-base" />
         {state.errors.name && <p className="mt-1 text-sm text-red-700">{state.errors.name}</p>}
       </div>
 
       <div>
         <label htmlFor="email" className="font-body text-sm font-medium text-ink-900">Email</label>
-        <input id="email" name="email" type="email" className="mt-1 w-full rounded-md border border-border bg-surface px-4 py-2 font-body text-sm" />
+        <input id="email" name="email" type="email" className="mt-1 w-full rounded-md border border-border bg-surface px-4 py-3 font-body text-base" />
         {state.errors.email && <p className="mt-1 text-sm text-red-700">{state.errors.email}</p>}
       </div>
 
       <div>
         <label htmlFor="message" className="font-body text-sm font-medium text-ink-900">Message</label>
-        <textarea id="message" name="message" rows={5} className="mt-1 w-full rounded-md border border-border bg-surface px-4 py-2 font-body text-sm" />
+        <textarea id="message" name="message" rows={5} className="mt-1 w-full rounded-md border border-border bg-surface px-4 py-3 font-body text-base" />
         {state.errors.message && <p className="mt-1 text-sm text-red-700">{state.errors.message}</p>}
       </div>
 

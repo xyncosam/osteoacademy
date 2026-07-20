@@ -35,7 +35,7 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden"
+          className="p-2 md:hidden"
           aria-expanded={isMenuOpen}
           aria-label="Toggle navigation menu"
           onClick={() => setIsMenuOpen((open) => !open)}
@@ -50,7 +50,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="py-2 font-body text-sm font-medium text-ink-900"
+              className="py-3 font-body text-sm font-medium text-ink-900"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}

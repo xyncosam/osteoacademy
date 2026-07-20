@@ -69,7 +69,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
           </div>
         </div>
 
-        <div className="w-full md:w-80 md:shrink-0">
+        <div className="order-first w-full md:order-none md:w-80 md:shrink-0">
           <div className="md:sticky md:top-8">
             <CourseSidebar course={course} />
           </div>

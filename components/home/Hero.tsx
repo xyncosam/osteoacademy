@@ -6,10 +6,10 @@ import { HeroSlideshow } from './HeroSlideshow'
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-5rem)] items-start overflow-hidden pt-16 pb-20 text-center">
+    <section className="relative flex min-h-[calc(100vh-5rem)] items-start overflow-hidden pt-10 pb-12 md:pt-16 md:pb-20 text-center">
       <HeroSlideshow />
       <Container className="flex flex-col items-center">
-        <span className="relative h-44 w-44 shrink-0">
+        <span className="relative h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-44 md:w-44">
           <Image src="/logo/badge-glow-light.png" alt="" fill className="object-contain" />
         </span>
         <p className="mt-4 font-body text-xs font-semibold uppercase tracking-[0.18em] text-sage-500">

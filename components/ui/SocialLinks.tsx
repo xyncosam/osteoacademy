@@ -52,7 +52,7 @@ export function SocialLinks({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}
-          className={VARIANT_CLASSES[variant]}
+          className={`p-2 -m-2 ${VARIANT_CLASSES[variant]}`}
         >
           <span className="block h-5 w-5">{social.icon}</span>
         </a>
