@@ -14,11 +14,11 @@ describe('CourseDetailPage', () => {
     render(Page)
 
     expect(screen.getByRole('heading', { level: 1, name: 'Dynamic Acupressure' })).toBeInTheDocument()
-    expect(screen.getByText('Dates Coming Soon')).toBeInTheDocument()
+    expect(screen.getByText('Enrollment Coming Soon')).toBeInTheDocument()
     expect(screen.getByText('Alexey Soshalskiy')).toBeInTheDocument()
   })
 
-  it('renders no Register/Notify button or link while dates are unpublished', async () => {
+  it('renders no Register/Notify button or link before enrollment opens', async () => {
     const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
     render(Page)
 

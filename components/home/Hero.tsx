@@ -20,7 +20,7 @@ export function Hero() {
         </h1>
         <span className="mt-4 h-1.5 w-16 rounded-full bg-sage-500" aria-hidden="true" />
         <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-cream-100">
-          Hands-on workshops that build real clinical skill, taught by a practicing professional. Online courses are coming soon.
+          Self-paced online courses that build real clinical skill, taught by a practicing professional.
         </p>
         <div className="mt-8">
           <Button href="/courses" variant="inverse">Explore Courses</Button>

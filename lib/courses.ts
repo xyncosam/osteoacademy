@@ -1,11 +1,11 @@
-import type { Course, CourseDate } from './types'
+import type { Course } from './types'
 
 export const COURSES: Course[] = [
   {
     slug: 'dynamic-acupressure',
     title: 'Dynamic Acupressure',
     tagline: 'Hands-on technique for real functional outcomes',
-    format: 'in-person',
+    format: 'online',
     priceCents: 49500,
     description: [
       "Dynamic Acupressure combines traditional acupressure point selection with modern anatomy and neurophysiology to treat common musculoskeletal conditions such as tennis elbow, golfer's elbow, plantar fasciitis, frozen shoulder, sciatica, SI joint dysfunction, TMJ dysfunction, neck pain, and low back pain.",
@@ -24,7 +24,6 @@ export const COURSES: Course[] = [
       bio: 'Alexey Soshalskiy has been practicing manual therapy since 2019, with training and experience in Rapid NeuroFascial Reset (RNFR) and Manual Osteopathy (MOT). Since 2022, he has served as an instructor at a local massage therapy institute, teaching anatomy, pathology, and orthopedic assessment. Through years of clinical practice, teaching, and continued study, Alexey has developed several original treatment concepts by integrating principles from physiotherapy, osteopathy, and Traditional Chinese Medicine. His approach emphasizes practical, evidence-informed techniques that can be readily applied in clinical practice.',
       photo: '/images/new-portrait.jpg',
     },
-    dates: [],
   },
 ]
 
@@ -34,8 +33,4 @@ export function getCourseBySlug(slug: string): Course | undefined {
 
 export function getFeaturedCourse(): Course {
   return COURSES[0]
-}
-
-export function getPublishedDates(course: Course): CourseDate[] {
-  return course.dates.filter((date) => date.published)
 }

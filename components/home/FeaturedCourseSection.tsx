@@ -11,7 +11,7 @@ export function FeaturedCourseSection() {
   return (
     <section className="bg-cream-100 py-20">
       <Container>
-        <SectionHeading eyebrow="Featured Workshop" title={course.title} />
+        <SectionHeading eyebrow="Featured Course" title={course.title} />
         <div className="mt-4 flex items-center gap-4">
           <Badge>{course.format === 'in-person' ? 'In-Person Workshop' : 'Online Course'}</Badge>
           <span className="font-display text-2xl text-forest-900">{formatPrice(course.priceCents)}</span>

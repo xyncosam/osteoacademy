@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   return {
     title: `${course.title} | Osteo Academy`,
-    description: `${course.title}: a hands-on workshop for health professionals. ${course.tagline}.`,
+    description: `${course.title}: a self-paced online course for health professionals. ${course.tagline}.`,
   }
 }
 

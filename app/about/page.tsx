@@ -8,7 +8,7 @@ import { getFeaturedCourse } from '@/lib/courses'
 export const metadata: Metadata = {
   title: 'About | Osteo Academy',
   description:
-    'Osteo Academy helps licensed health professionals build real, applicable clinical skill through hands-on workshops, with online courses coming soon.',
+    'Osteo Academy helps licensed health professionals build real, applicable clinical skill through self-paced online courses.',
 }
 
 export default function AboutPage() {
@@ -24,8 +24,8 @@ export default function AboutPage() {
         />
         <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-ink-900">
           Osteo Academy exists to help licensed health professionals build real, applicable clinical skill through
-          hands-on workshops today and self-paced online courses soon. Every course is designed around a simple idea:
-          learn it, understand why it works, apply it with a real patient, and let it transform your practice.
+          self-paced online courses. Every course is designed around a simple idea: learn it, understand why it works,
+          apply it with a real patient, and let it transform your practice.
         </p>
 
         <div className="mt-12">
