@@ -22,8 +22,16 @@ describe('CourseDetailPage', () => {
     const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
     render(Page)
 
-    expect(screen.queryByRole('button')).not.toBeInTheDocument()
-    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /register|notify/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /register|notify/i })).not.toBeInTheDocument()
+  })
+
+  it('renders a refund policy that links to the contact page', async () => {
+    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
+    render(Page)
+
+    expect(screen.getByText('Enroll with confidence')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'contact us' })).toHaveAttribute('href', '/contact')
   })
 
   it('calls notFound for an unknown slug', async () => {

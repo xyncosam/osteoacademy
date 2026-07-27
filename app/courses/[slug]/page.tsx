@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -63,6 +64,35 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
             <SectionHeading eyebrow="Your Instructor" title="Meet your instructor" />
             <div className="mt-6">
               <InstructorProfile instructor={course.instructor} />
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <SectionHeading eyebrow="Refund Policy" title="Enroll with confidence" />
+            <div className="mt-6 flex flex-col gap-4">
+              <p className="font-body text-base leading-relaxed text-ink-900">
+                If {course.title} isn&apos;t the right fit, you can request a full refund within 14 days of
+                purchase, provided you&apos;ve completed less than 25% of the course content. This gives you
+                real time to explore the material while keeping things fair for everyone.
+              </p>
+              <p className="font-body text-base leading-relaxed text-ink-900">
+                To request a refund,{' '}
+                <Link href="/contact" className="underline hover:text-sage-500">
+                  contact us
+                </Link>{' '}
+                with your name and purchase date. Approved refunds are issued to your original payment method
+                within 5 business days.
+              </p>
+              <p className="font-body text-base leading-relaxed text-ink-900">
+                Some situations are always covered, regardless of timing: accidental duplicate charges, buying
+                the wrong course by mistake, or being unable to access the course due to a technical problem on
+                our end. In any of these cases, we&apos;ll make it right with a refund, credit, or fix.
+              </p>
+              <p className="font-body text-base leading-relaxed text-ink-900">
+                Once certificates of completion become available, any course a certificate has been issued for
+                will no longer be eligible for a refund, since the certificate confirms the course was
+                completed.
+              </p>
             </div>
           </div>
         </div>
