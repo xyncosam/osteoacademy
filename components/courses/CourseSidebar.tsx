@@ -1,5 +1,6 @@
 import { formatPrice } from '@/lib/format'
 import type { Course } from '@/lib/types'
+import { NotifyMeForm } from './NotifyMeForm'
 
 export function CourseSidebar({ course }: { course: Course }) {
   return (
@@ -12,6 +13,7 @@ export function CourseSidebar({ course }: { course: Course }) {
         <p className="mt-1 font-body text-sm leading-relaxed text-ink-900">
           This course isn&apos;t open for enrollment yet. Check back soon for updates.
         </p>
+        <NotifyMeForm courseTitle={course.title} />
       </div>
 
       <p className="mt-6 font-body text-xs text-ink-900/70">Instructor: {course.instructor.name}</p>

@@ -18,12 +18,20 @@ describe('CourseDetailPage', () => {
     expect(screen.getByText('Alexey Soshalskiy')).toBeInTheDocument()
   })
 
-  it('renders no Register/Notify button or link before enrollment opens', async () => {
+  it('renders no Register/purchase button or link before enrollment opens', async () => {
     const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
     render(Page)
 
-    expect(screen.queryByRole('button', { name: /register|notify/i })).not.toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: /register|notify/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /register|enroll now|buy|purchase/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /register|enroll now|buy|purchase/i })).not.toBeInTheDocument()
+  })
+
+  it('renders a Notify Me form for enrollment interest', async () => {
+    const Page = await CourseDetailPage({ params: Promise.resolve({ slug: 'dynamic-acupressure' }) })
+    render(Page)
+
+    expect(screen.getByRole('button', { name: 'Notify Me' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Email')).toBeInTheDocument()
   })
 
   it('renders a refund policy that links to the contact page', async () => {

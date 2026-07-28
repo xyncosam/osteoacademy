@@ -1,3 +1,5 @@
+import { isValidEmail } from './validateEmail'
+
 export type ContactFormInput = {
   name: string
   email: string
@@ -5,8 +7,6 @@ export type ContactFormInput = {
 }
 
 export type ContactFormErrors = Partial<Record<keyof ContactFormInput, string>>
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export function validateContactForm(input: ContactFormInput): ContactFormErrors {
   const errors: ContactFormErrors = {}
@@ -17,7 +17,7 @@ export function validateContactForm(input: ContactFormInput): ContactFormErrors 
 
   if (!input.email.trim()) {
     errors.email = 'Please enter your email address.'
-  } else if (!EMAIL_PATTERN.test(input.email.trim())) {
+  } else if (!isValidEmail(input.email.trim())) {
     errors.email = 'Please enter a valid email address.'
   }
 
