@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Osteo Academy
 
-## Getting Started
+Marketing site and course platform for Osteo Academy, a continuing-education
+site for health professionals. Flagship offering is **Dynamic Acupressure**,
+a self-paced online course taught by Alexey Soshalskiy. There are no
+in-person workshops.
 
-First, run the development server:
+## Tech stack
+
+- Next.js (App Router) + TypeScript + Tailwind CSS v4 (`@theme` tokens in `app/globals.css`)
+- Vitest + React Testing Library
+- Brevo for transactional email (contact form, course enrollment-interest capture)
+- Hosted on Cloudflare Workers via the OpenNext adapter (`@opennextjs/cloudflare`)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.example` to `.env.local` and fill in:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `BREVO_API_KEY` — Brevo transactional email API key
+- `CONTACT_FROM_EMAIL` — sender address for outgoing emails
+- `CONTACT_TO_EMAIL` — inbox that receives contact form submissions and
+  course "notify me" signups
 
-## Learn More
+Without these set, the contact form and course notify-me form still render
+and validate correctly, but return a friendly "not configured yet" message
+instead of sending.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm test              # vitest
+npm run lint           # eslint
+npm run build           # next build
+npm run images:convert  # convert/compress source images in images/ into public/
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Cloudflare Workers Builds auto-deploys on every push to `main` via GitHub
+integration — there is no local `wrangler deploy` step in the normal
+workflow. (Local Wrangler/OpenNext preview and deploy are unsupported on
+Windows ARM64, since there's no `workerd` build for that target; `npm run
+preview` / `npm run deploy` work from a supported platform if ever needed.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` — routes (Home, Courses, course detail, About, Contact) and server actions
+- `components/` — UI primitives (`ui/`) and page-section components, grouped by area
+- `lib/` — domain types, course data, validation, email sending
+- `images/`, `logo/` — original source assets; `npm run images:convert` processes these into `public/`
